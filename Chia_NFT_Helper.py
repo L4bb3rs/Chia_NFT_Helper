@@ -5,13 +5,13 @@ import argparse
 
 class MintGardenAPI:
     
-    def __init__(self, collection_id: str) -> None:
+    def __init__(self, collection_id: str, require_owners: bool) -> None:
         """
         Initialize class attributes.
         """
         self.collection_id = collection_id
         self.url = f"https://api.mintgarden.io/collections/{collection_id}/nfts"
-        self.params = {"require_owner": "true", "require_price": "false", "size": "100"}
+        self.params = {"require_owner": str(require_owners).lower(), "require_price": "false", "size": "100"}
         self.data = None
         self.unique_owner_encoded_ids = None
         self.unique_owner_address_encoded_ids = None
@@ -112,7 +112,7 @@ class MintGardenAPI:
 
 
 
-parser = argparse.ArgumentParser(description="MintGardenAPI script")
+parser = argparse.ArgumentParser(description="Chia NFT Helper")
 
 parser.add_argument("-c", "--collection_id", type=str, required=True,
                     help="The ID of the MintGarden collection to fetch data from.")
@@ -120,11 +120,12 @@ parser.add_argument("-o", "--output_file", type=str, default="output.xlsx",
                     help="The name of the output file. Default is 'output.xlsx'.")
 parser.add_argument("-u", "--unique", action="store_true", default=False,
                     help="Whether to extract only unique owner_encoded_ids and owner_address_encoded_ids.")
+parser.add_argument("-d", "--did_required", action="store_true", default=False,
+                    help="Whether to extract only those with owners.")  # Added this line for the new option
 
 args = parser.parse_args()
 
-
-api = MintGardenAPI(args.collection_id)
+api = MintGardenAPI(args.collection_id, args.did_required)  # Pass the value of the new option to the class
 api.run(args.output_file, unique=args.unique)
 
 
