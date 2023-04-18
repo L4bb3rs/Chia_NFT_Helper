@@ -27,3 +27,6 @@ ChiaNFTHelper is released under the MIT License.
 
 ### Disclaimer
 This tool is provided for educational and informational purposes only. Use of this tool is at your own risk. The author and the associated contributors are not responsible for any illegal or unethical use of this tool.
+
+### Donations
+Support the 300 Mess with donations of NFTs or any CAT - xch1sfym29gczc0q0p0ery93r65k6dajt34wklytcntdzsz752usruzqh5658t
