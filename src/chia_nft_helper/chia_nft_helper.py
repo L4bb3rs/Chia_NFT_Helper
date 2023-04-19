@@ -3,7 +3,7 @@ import pandas as pd
 import os
 import argparse
 import itertools
-import setuptools
+# import setuptools
 
 
 class ChiaNFTHelper:
