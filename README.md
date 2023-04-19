@@ -1,5 +1,5 @@
 # ChiaNFTHelper
-ChiaNFTHelper is a Python class that provides a convenient way to fetch and extract owner_address_encoded_ids and owner_encoded_ids from the MintGarden API for a given collection ID. The extracted data can be printed to an Excel file.
+ChiaNFTHelper is a Python module that provides a convenient way to fetch and extract owner XCH addresses and owner DID for a given NFT collection ID, utlising the MintGarden API and their collection ID system. The extracted data is then exported into an Excel file.
 
 ## Installation
 Before using ChiaNFTHelper, you need to install the required Python packages. You can install the required packages using pip:
